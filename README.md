@@ -62,10 +62,6 @@ Recharge is to be done monthly. Finance department (La-Risa Lewis, La-Risa.Lewis
   * Lastly, send the `rechargeSummary[date_range].xlsx` to the finance dept. (La-Risa.Lewis.ucsf.edu). 
 
 ## calculateRecharge.py details:
-* Python (ver. 3.6.3) packages used (as of 6/12/19) -- may work on other versions as well. If missing anything, then a pip install should do the trick. 
-  * pandas (ver. 0.23.4)
-  * pygsheets (ver. 2.0.1)
-  * numpy (ver. 1.5.4)
-  * oauth2client (ver. 4.1.3)
+* Python (tested w/ ver. 3.6.3 and 3.6.8) packages used (as of 6/12/19) -- may work on other versions as well. Look at `requirements.txt` for needed modules. I recommend creating a virtualenv for Python 3 and then performing `pip install requirements.txt` to get necessary modules. If missing anything, then a pip install should do the trick. 
 
-* The script needs to take in `msg-Recharge-24378e029f2d.json` in order to authorize access to the Google sheets needed. Make sure this file exists; otherwise, you will have to generate a new json file.
+* The script needs to take in `msg-Recharge-24378e029f2d.json` in order to authorize access to the Google sheets needed. Make sure this file exists just outside the root directory (i.e. `../`); otherwise, you will have to generate a new json file and credentials. You should have this json if you need it...
