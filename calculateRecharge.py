@@ -206,7 +206,7 @@ def getGL(dates):
 
     # categories of charges; should be lower case
     amortizedExpenses = ['voucher']
-    voucherExceptions = ['airgas', 'vpl', 'vantage point logistics', 'cdw-government']
+    voucherExceptions = ['airgas', 'vpl', 'vantage point logistics', 'cdw-government', 'distributed-exception']
     monthlyExpenses = ['recharge']
     payroll = ['payroll']
 
