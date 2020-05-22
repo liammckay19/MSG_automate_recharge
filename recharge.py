@@ -84,6 +84,10 @@ def itemizeMosquitoLogs(df_mosquitoLog, start_date, end_date, costMosqTip, costH
 
 
 def itemizeScreenOrders(df_screenOrders, start_date, end_date):
+    # wantedSOCol = ['Group','Requested By','Item Name','Qty','Unit Price','Screens Total Cost']
+
+    # itemizedSOMonthByPI = df_screenOrders.groupby([pd.Grouper(freq="M"),'Group']).apply(lambda x: x.head(
+    #     len(x.index)))[wantedSOCol].loc[start_date:end_date]
     itemizedSOMonthByPI = df_screenOrders[["Screens Total Cost", "Group"]]
     itemizedSOMonthByPI = itemizedSOMonthByPI[itemizedSOMonthByPI.index <= end_date]
     itemizedSOMonthByPI = itemizedSOMonthByPI[itemizedSOMonthByPI.index >= start_date]
@@ -185,7 +189,7 @@ def calculateRecharge(dfs, date_range, users):
     itemizedMosqCryMonthByPI = itemizeMosquitoLogs(df_mosquitoLog, start_date, end_date, costMosqTip, costHDSConsume,
                                                    costSDSConsume)
 
-    itemizedSOMonthByPI = itemizeScreenOrders(df_mosquitoLog, df_screenOrders, start_date)
+    itemizedSOMonthByPI = itemizeScreenOrders(df_screenOrders, start_date, end_date)
 
     df_facFee = itemizeFacilityFees(allUsers, coreUsers, coreFacilityFee, associateUsers, assocFacilityFee, start_date,
                                     end_date)

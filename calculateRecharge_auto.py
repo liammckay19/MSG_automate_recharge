@@ -8,6 +8,7 @@ from datetime import datetime, date, timedelta
 from tkinter.filedialog import askopenfilename
 import shutil
 import glob
+
 import googleDriveUtils as gdrive
 import cleanData as clean
 import recharge as recharge
@@ -23,7 +24,7 @@ class UserException(Exception):
 
 # obtain usage log data from Google drive forms/spreadsheets (mosquito, mosquitoLCP, dragonfly)
 def getGDriveLogUsage(dates):
-    df_mosquitoLCPLogRAW, df_mosquitoLogRAW, df_dragonflyLogRAW, df_screenOrders = gdrive.getGDriveLogUsage(dates)
+    df_mosquitoLCPLogRAW, df_mosquitoLogRAW, df_dragonflyLogRAW, df_screenOrders = gdrive.getGDriveLogUsage()
     df_mosquitoLCPLog = clean.clean_DF_MosquitoLCP(df_mosquitoLCPLogRAW, dates)
     df_mosquitoLog = clean.clean_DF_MosquitoCrystal(df_mosquitoLogRAW, dates)
     df_dragonflyLog = clean.clean_DF_Dragonfly(df_dragonflyLogRAW, dates)

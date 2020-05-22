@@ -135,8 +135,6 @@ def getGDriveLogUsage(dates):
     df_mosquitoLog = clean_DF_MosquitoCrystal(df_mosquitoLogRAW,dates)
     df_dragonflyLog = clean_DF_Dragonfly(df_dragonflyLogRAW,dates)
     df_screenOrdersLog = clean_DF_screenOrders(df_screenOrders,dates)
-    print('inside getGDriveLogUsage(dates)')
-    print(df_screenOrdersLog.head())
     return [df_mosquitoLog, df_mosquitoLCPLog, df_dragonflyLog, df_screenOrdersLog]
 
 def clean_DF_screenOrders(df, dates):
