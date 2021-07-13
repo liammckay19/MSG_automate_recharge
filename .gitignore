@@ -2,5 +2,7 @@ msg-Recharge-24378e029f2d.json
 recharge_env/*
 .DS_Store
 GL_DPE_local/
+*.xlsx
+.idea/*
 
 
